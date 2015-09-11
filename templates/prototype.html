@@ -1,0 +1,22 @@
+<ion-view view-title="PrototypePlayer">
+  <ion-content ng-controller="AudioCtrl">
+    <p>{{loading}}</p>
+    <button class="button" ng-click="play(&apos;http://supernice-staging-b.appspot.com/static/slideshow/sounds/alto.mp3&apos;)"> Play Online </button>
+    <button class="button" ng-click="pause()"> Pause </button>
+    <button class="button" ng-click="stop()"> Stop </button>
+    <p> {{duration}}</p>
+    <p> {{mediaPosition}} </p>
+
+    <button class="button" ng-click="download('http://supernice-staging-b.appspot.com/static/slideshow/sounds/alto.mp3', 'alto.mp3', 'snowman')">Download alto</button>
+    <button class="button" ng-click="download('http://storage.googleapis.com/staging-two.appspot.com/post_audio_file_1441899893.jpg', 'banana.mp3', 'beetlejuice')">Download banana</button>
+
+  <h3>Downloaded</h3>
+    <ion-list ng-if="downloads">
+      <ion-item ng-repeat="download in downloads">
+        <button class="button" ng-click="play(download.file_path)"> {{download.file_name}} </button> 
+        <button class="button button-assertive" ng-click="delete(download.file_name)">Delete</button>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

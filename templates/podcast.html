@@ -1,0 +1,38 @@
+<ion-view>
+	<ion-content>
+		<!-- <ion-list ng-if="podcasts">
+		  <ion-item ng-repeat="podcast in podcasts" class="button button-full" ng-click="player(podcast)">
+		    {{podcast.title}}
+		  </ion-item>
+		</ion-list> -->
+
+		<div class="list card" ng-if="podcasts" ng-repeat="podcast in podcasts">
+
+		  <div class="item">
+		    <!-- <img src="avatar.jpg"> -->
+		    <h2>{{podcast.title}}</h2>
+		    <p>{{podcast.school}}</p>
+		  </div>
+
+		  <div class="">
+		  	<div>
+		  		{{podcast.description}}
+		  	</div>
+		  </div>
+
+		  <!-- <div class="item item-image">
+		    <img src="cover.jpg">
+		  </div> -->
+
+		  <div class="item item-icon-left assertive" ng-click="player(podcast)">
+		    <i class="icon ion-play"></i>
+		    Start listening
+		  </div>
+
+		</div>
+
+		<div ng-if="!podcasts">
+		  Loading podcasts...
+		</div>
+	</ion-content>
+</ion-view>

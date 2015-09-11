@@ -1,0 +1,12 @@
+<ion-view>
+	<ion-content>
+		<ion-list ng-if="schools">
+		  <ion-item ng-repeat="school in schools" class="button button-full" ng-click="podcast(school.id)">
+		    {{school.name}}
+		  </ion-item>
+		</ion-list>
+		<div ng-if="!schools">
+		  Loading schools...
+		</div>
+	</ion-content>
+</ion-view>

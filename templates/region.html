@@ -1,0 +1,12 @@
+<ion-view>
+	<ion-content>
+		<ion-list ng-if="regions">
+		  <ion-item ng-repeat="region in regions" class="button button-full" ng-click="school(region.id)">
+		    {{region.name}}
+		  </ion-item>
+		</ion-list>
+		<div ng-if="!regions">
+		  Loading regions...
+		</div>
+	</ion-content>
+</ion-view>
