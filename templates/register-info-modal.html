@@ -1,0 +1,40 @@
+
+<ion-modal-view>
+    <ion-header-bar ng-click="closeModal()">
+    	<i class="icon ion-close close-x"></i>
+      <h1 class="title">What's this about?</h1>
+      <button class="logo-button-header float-right">
+        <img src='img/podradio-logo.png' class='header-logo'>
+      </button>
+    </ion-header-bar>
+    <ion-content>
+      	<div class="row">
+      		<div class="col grey-text">
+      			<p>
+      				Welcome to Podradio.co.za we trust you will enjoy navigating through our App and enjoy listening to the various uploaded schools podcasts.
+      			</p>
+      			<p>
+      				Your login details will be used exclusively to send you weekly updates via email of the latest scheduled podcasts.
+      			</p>
+      			<p class="center">
+      				For information regarding our privacy policy please visit:<br> http://www.podradio.co.za
+      			</p>
+
+            <ion-checkbox ng-model="data.subscribed">Subscribe me to Podradio.</ion-checkbox>
+
+            <!-- <ul class="list">
+
+              <li class="item item-checkbox">
+                 <label class="checkbox">
+                   <input type="checkbox" checked ng->
+                 </label>
+                 Subscribe me to Podradio.
+              </li>
+
+            </ul> -->
+
+      		</div>
+      	</div>
+    </ion-content>
+</ion-modal-view>
+

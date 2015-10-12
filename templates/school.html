@@ -1,12 +1,23 @@
-<ion-view>
+<ion-view view-title="<span class='bold-orange'>{{region_name}}</span>">
+	
+	<ion-nav-buttons side="right">
+    	<button class="logo-button">
+      		<img src='img/podradio-logo.png' class='header-logo'>
+    	</button>
+  	</ion-nav-buttons>
+
 	<ion-content>
 		<ion-list ng-if="schools">
-		  <ion-item ng-repeat="school in schools" class="button button-full" ng-click="podcast(school.id)">
-		    {{school.name}}
+		  <ion-item ng-repeat="school in schools" class="item-avatar item-orange light-orange" ng-click="podcast(school.id, school.name)">
+		  	<img src="{{school.image}}">
+		  	<p class="light-orange">{{school.name}}</p>
 		  </ion-item>
 		</ion-list>
 		<div ng-if="!schools">
 		  Loading schools...
+		</div>
+		<div ng-if="schools.length <= 0" class="center">
+		  There are currently no schools listed for {{region_name}}
 		</div>
 	</ion-content>
 </ion-view>

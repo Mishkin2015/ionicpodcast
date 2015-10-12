@@ -1,0 +1,47 @@
+
+    <ion-view view-title="Podradio.co.za">
+		<ion-content scroll="false">
+			<section class="home-container">
+				<div class="row register-row">
+					<div class="col col-center center">
+						<img src='img/podradio-logo.png' class='header-logo-large'>
+					</div>
+				</div>
+				<div class="row register-row center home-button">
+					<div class="col col-center">
+						<!-- <img src='img/podradio-logo.png' class='header-logo-large'> -->
+						<h4>Please Register with us</h4>
+						<div class="input-list list">
+						  <label class="item item-input">
+						    <input type="text" placeholder="Your name" ng-model="data.name">
+						  </label>
+						  <label class="item item-input">
+						    <input type="email" placeholder="Your email" ng-model="data.email">
+						  </label>
+						</div>
+
+						<p ng-if="invalidEmail">Please provide a valid email</p>
+
+					</div>
+				</div>
+
+				<div class="row register-row">
+					<div class="col col-center center">
+						
+						<div>
+							<span class="help-icon float-right" ng-click="infoModal()">
+					    		<i class="icon ion-help-circled" style="font-size: 1.5rem;"></i>
+					    	</span>
+						</div>
+
+						<button class="button button-full solid-button" ng-click="register()" ng-if="!loading">Register</button>
+						<div class="center" ng-if="loading">
+							<ion-spinner></ion-spinner>
+						</div>
+
+					</div>
+				</div>
+
+			</section>
+		</ion-content>
+	</ion-view>

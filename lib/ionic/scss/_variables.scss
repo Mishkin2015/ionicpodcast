@@ -11,6 +11,7 @@ $energized:                       #ffc900 !default;
 $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
+$range-selected: $podradio-orange;
 
 
 // Base
@@ -35,8 +36,8 @@ $headings-font-family:            $font-family-base !default;
 $headings-font-weight:            500 !default;
 $headings-line-height:            1.2 !default;
 
-$base-background-color:           #fff !default;
-$base-color:                      #000 !default;
+$base-background-color:           #050505 !default;
+$base-color:                      #EDEDED !default;
 
 $link-color:                      $positive !default;
 $link-hover-color:                darken($link-color, 15%) !default;
@@ -66,7 +67,7 @@ $scroll-refresh-icon-color:       #666666 !default;
 // Buttons
 // -------------------------------
 
-$button-color:                    #222 !default;
+$button-color:                    $podradio-orange !default;
 $button-block-margin:             10px !default;
 $button-clear-padding:            6px !default;
 $button-border-radius:            2px !default;
@@ -99,8 +100,8 @@ $button-light-active-bg:          #fafafa !default;
 $button-light-active-border:      #ccc !default;
 
 $button-stable-bg:                $stable !default;
-$button-stable-text:              #444 !default;
-$button-stable-border:            #b2b2b2 !default;
+$button-stable-text:              $podradio-orange !default;
+$button-stable-border:            $podradio-orange !default;
 $button-stable-active-bg:         #e5e5e5 !default;
 $button-stable-active-border:     #a2a2a2 !default;
 
@@ -309,7 +310,7 @@ $item-thumbnail-height:           80px !default;
 $item-thumbnail-margin:           10px !default;
 
 $item-divider-bg:                 #f5f5f5 !default;
-$item-divider-color:              #222 !default;
+$item-divider-color:              $podradio-orange !default;
 $item-divider-padding:            5px 15px !default;
 
 $item-light-bg:                   $button-light-bg !default;
@@ -496,11 +497,11 @@ $checkbox-height:                 28px !default;
 $checkbox-border-radius:          $checkbox-width !default;
 $checkbox-border-width:           1px !default;
 
-$checkbox-off-bg-color:           #fff !default;
+$checkbox-off-bg-color:           #303030 !default;
 $checkbox-off-border-light:       $button-light-border !default;
 $checkbox-on-bg-light:            $button-light-border !default;
 $checkbox-off-border-stable:      $button-stable-border !default;
-$checkbox-on-bg-stable:           $button-stable-border !default;
+$checkbox-on-bg-stable:           $podradio-orange !default;
 $checkbox-off-border-positive:    $positive !default;
 $checkbox-on-bg-positive:         $positive !default;
 $checkbox-off-border-calm:        $calm !default;
@@ -516,8 +517,8 @@ $checkbox-on-bg-royal:            $royal !default;
 $checkbox-off-border-dark:        $dark !default;
 $checkbox-on-bg-dark:             $dark !default;
 $checkbox-off-border-default:     $button-light-border !default;
-$checkbox-on-bg-default:          $positive !default;
-$checkbox-on-border-default:      $positive !default;
+$checkbox-on-bg-default:          $podradio-orange !default;
+$checkbox-on-border-default:      $podradio-orange !default;
 
 $checkbox-check-width:            1px !default;
 $checkbox-check-color:            #fff !default;
@@ -527,6 +528,7 @@ $checkbox-check-color:            #fff !default;
 // -------------------------------
 
 $range-track-height:              2px !default;
+$range-selected-height:           8px !default;
 $range-slider-width:              28px !default;
 $range-slider-height:             28px !default;
 $range-slider-border-radius:      50% !default;
@@ -558,7 +560,7 @@ $menu-side-shadow:                -1px 0px 2px rgba(0, 0, 0, 0.2), 1px 0px 2px r
 // Modals
 // -------------------------------
 
-$modal-bg-color:                  #fff !default;
+$modal-bg-color:                  $base-background-color !default;
 $modal-backdrop-bg-active:        #000 !default;
 $modal-backdrop-bg-inactive:      rgba(0,0,0,0) !default;
 

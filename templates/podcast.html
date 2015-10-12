@@ -1,35 +1,57 @@
-<ion-view>
+<ion-view view-title="<span class='light-orange'>{{school_name}}</span>">
+	
+	<ion-nav-buttons side="right">
+	    <button class="logo-button">
+	      <img src='img/podradio-logo.png' class='header-logo'>
+	    </button>
+  	</ion-nav-buttons>
+
 	<ion-content>
-		<!-- <ion-list ng-if="podcasts">
-		  <ion-item ng-repeat="podcast in podcasts" class="button button-full" ng-click="player(podcast)">
-		    {{podcast.title}}
-		  </ion-item>
-		</ion-list> -->
+		<div class="list card orange-card" ng-if="podcasts">
+		  <div class="item podcast-item center" ng-repeat="podcast in podcasts">
+		    <div ng-click="player(podcast, podcast.downloaded)">
+			    <h2 class="bold-orange" style="font-size: 1.2rem;">
+			    	<span ng-click="player(podcast, podcast.downloaded)">{{podcast.title}} </span>
+			    </h2>
+			    <div class="row">
+				    <div class="col center">
+				    	<!-- <span class="inline-icon-button" ng-click="infoModal(podcast)">
+				    		<i class="icon ion-information-circled"></i>
+				    	</span>
+				    	<span class="inline-icon-button" ng-if="!podcast.downloaded" ng-click="download( podcast.download_link, 'track_'+podcast.id+'.mp3', podcast.school, podcast )">
+				    		<i class="icon ion-android-download"></i>
+				    	</span> -->
+				    	<span class="inline-icon-button">
+				    		<i class="icon ion-play" style="font-size: 2rem;"></i>
+				    	</span>
+				    </div>
+			    </div>
+			</div>
+		    <p class="grey-text" ng-click="player(podcast, podcast.downloaded)">{{podcast.description}}</p>
+		    <div class="date">{{podcast.date}}</div>
 
-		<div class="list card" ng-if="podcasts" ng-repeat="podcast in podcasts">
+		    <div class="row">
+			    <div class="col center">
+			    	<span class="inline-icon-button" ng-click="infoModal(podcast)">
+			    		<i class="icon ion-information-circled"></i>
+			    	</span>
+			    	<span class="inline-icon-button" ng-if="!podcast.downloaded" ng-click="download( podcast.download_link, 'track_'+podcast.id+'.mp3', podcast.school, podcast )">
+			    		<i class="icon ion-android-download"></i>
+			    	</span>
+			    	<!-- <span class="inline-icon-button" ng-click="player(podcast, podcast.downloaded)">
+			    		<i class="icon ion-play"></i>
+			    	</span> -->
+			    </div>
+		    </div>
 
-		  <div class="item">
-		    <!-- <img src="avatar.jpg"> -->
-		    <h2>{{podcast.title}}</h2>
-		    <p>{{podcast.school}}</p>
 		  </div>
-
-		  <div class="">
-		  	<div>
-		  		{{podcast.description}}
-		  	</div>
-		  </div>
-
-		  <!-- <div class="item item-image">
-		    <img src="cover.jpg">
-		  </div> -->
-
-		  <div class="item item-icon-left assertive" ng-click="player(podcast)">
-		    <i class="icon ion-play"></i>
-		    Start listening
-		  </div>
-
 		</div>
+
+		<ion-list ng-if="next_curs">
+		  <ion-item class="button button-full button-clear bold-dark region-button-item" ng-click="more_podcasts(next_curs)">
+		    More
+		  </ion-item>
+		</ion-list>
 
 		<div ng-if="!podcasts">
 		  Loading podcasts...

@@ -1,0 +1,59 @@
+<!-- <ion-view>
+	<ion-content>
+		<ion-list ng-if="downloads.length > 0">
+		  <ion-item ng-repeat="download in downloads" class="button button-full" ng-click="player(download.podcast, download.file_path)">
+		    <h5>{{download.podcast.title}}</h5>
+		    <p>{{download.podcast.description}}</p>
+		  </ion-item>
+		</ion-list>
+		<div ng-if="!downloads" class="center">
+		  You haven't downloaded anything yet.
+		</div>
+	</ion-content>
+</ion-view> -->
+
+<ion-view view-title="Saved Podcasts">
+	
+	<ion-nav-buttons side="right">
+	    <button class="logo-button">
+	      <img src='img/podradio-logo.png' class='header-logo'>
+	    </button>
+  	</ion-nav-buttons>
+
+	<ion-content>
+		<div class="list card orange-card" ng-if="downloads.length > 0" ng-repeat="download in downloads">
+		  <div class="item podcast-item center">
+		    <h2>
+		    	<span ng-click="player(download.podcast, download.file_path)">{{download.podcast.title}}</span> 
+		    	<!-- <span class="inline-icon-button float-right" ng-click="infoModal(download.podcast)">
+		    		<i class="icon ion-information-circled"></i>
+		    	</span>
+		    	<span class="inline-icon-button float-right">
+		    		<i class="icon ion-trash-a" ng-click="delete_bug(download.file_name)"></i>
+		    	</span>  -->
+		    </h2>
+		    <div class="row">
+		    	<div class="col center" ng-click="infoModal(download.podcast)">
+		    		<span class="inline-icon-button">
+			    		<i class="icon ion-information-circled"></i>
+			    	</span>
+		    	</div>
+		    	<div class="col center" ng-click="delete(download.file_name)">
+		    		<span class="inline-icon-button">
+			    		<i class="icon ion-trash-a"></i>
+			    	</span> 
+		    	</div>
+		    </div>
+		    <p class="grey-text">{{download.podcast.description}}</p>
+		    <p class="white-text">{{download.podcast.school}}</p>
+		  </div>
+		</div>
+		<div ng-if="downloads.length <= 0">
+		  <div class="row">
+		  	<div class="col center">
+		  		Nothing downloaded yet.
+		  	</div>
+		  </div>
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,24 +1,121 @@
-<ion-view view-title="Player">
+<ion-view view-title="{{podcast.title}}">
+  
+  <ion-nav-buttons side="right">
+    <button class="logo-button">
+      <img src='img/podradio-logo.png' class='header-logo'>
+    </button>
+  </ion-nav-buttons>
+
   <ion-content>
 
+  <div id="audio-player">
+
+    <div class="row">
+      <div class="col center title">
+        {{podcast.title}}
+      </div>
+    </div>
+
+    <!-- if downloaded -->
+    <div class="row" ng-if="podcast.downloaded">
+      <div class="col col-center player-controls">
+        <span ng-if="!playing" ng-click="play(podcast.downloaded)">
+          <i class="icon ion-play"></i>
+        </span>
+        <span ng-if="playing" ng-click="pause()">
+          <i class="icon ion-pause"></i>
+        </span>
+        <!-- <span ng-click="stop()">
+          <i class="icon ion-stop"></i>
+        </span> -->
+      </div>
+    </div>
+    <!-- if not downloaded -->
+    <div class="row" ng-if="!podcast.downloaded">
+      <div class="col col-center player-controls">
+        <span ng-if="!playing" ng-click="play(podcast.download_link)">
+          <i class="icon ion-play"></i>
+        </span>
+        <span ng-if="playing" ng-click="pause()">
+          <i class="icon ion-pause"></i>
+        </span>
+        <!-- <span ng-click="stop()">
+          <i class="icon ion-stop"></i>
+        </span> -->
+      </div>
+    </div>
+
     <div class="range">
-        <i class="icon ion-volume-low"></i>
-        <input type="range" name="volume" ng-model="data.volume">
-        <i class="icon ion-volume-high"></i>
+          <!-- <i class="icon ion-volume-low"></i> -->
+          <input type="range" name="progress" ng-model="data.progress" on-touch="touched_seek()" on-release="released_seek()">
+          <!-- <i class="icon ion-volume-high"></i> -->
+    </div>
+    <div class="track-time row">
+        <div class="track-progress col grey-text" style="text-align: left;">
+          {{mediaPosition}}
+        </div>
+        <div class="track-duration col grey-text" style="text-align: right;">
+          {{duration}}
+        </div>
     </div>
 
-    <button class="button" ng-click="play(podcast.download_link)">Play</button>
+  </div>
 
-    <div>
-      duration: {{duration}}
+  <div class="row">
+    <div ng-if="sponsorLink" id="sponsored_container" class="col" ng-click="openSponsorLink(sponsorLink)">
+      <div ng-if="sponsorImage" class="center">
+        <img src="{{sponsorImage}}" style="max-height: 100px;">
+      </div>
+      <p id="sponsored" class="white-text" ng-bind-html="inAppMessage">
+        <!-- Sponsors announcement... 200em Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse scelerisque pellentesque consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. -->
+      </p>
     </div>
-    <div>
-      progress: {{progress}} ( {{progress_perc}}% )
+    <div ng-if="!sponsorLink" id="sponsored_container" class="col">
+      <p id="sponsored" class="white-text" ng-bind-html="inAppMessage">
+        <!-- Sponsors announcement... 200em Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse scelerisque pellentesque consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. -->
+      </p>
+    </div>
+  </div>
+
+  <!-- <div class="row">
+    <div class="col col-center center light-orange toggle-container">
+      Play in background
+    </div>
+    <div class="col col-center right-align light-orange toggle-container">
+      <label class="toggle toggle-assertive">
+         <input type="checkbox" ng-model="data.backgroundMode" ng-click="toggleBackgroundMode()">
+         <div class="track">
+           <div class="handle"></div>
+         </div>
+      </label>
+    </div>
+  </div> -->
+
+  <!-- <div class="row">
+    <div class="col button button-full button-clear text-center" ng-click="openModal()">
+      Join the Podradio mailing List
+    </div>
+  </div> -->
+
+    <div class="row track-actions center">
+      <div class="col" ng-click="share( podcast.title, podcast.share_url )">
+        <i class="icon ion-forward"></i><br>share
+      </div>
+      <div class="col" ng-click="download( podcast.download_link, 'track_'+podcast.id+'.mp3', podcast.school )" ng-if="!podcast.downloaded">
+        <i class="icon ion-android-download"></i><br>download
+      </div>
+      <div class="col" ng-click="savedPodcasts()">
+        <i class="icon ion-bookmark"></i><br>saved
+      </div>
+      <div class="col" ng-click="goHome()">
+        <i class="icon ion-home"></i><br>home
+      </div>
     </div>
 
-
-    <div>
-      {{podcast.download_link}}
+    <div class="row">
+      <div class="col description full grey-text">
+        <p>{{podcast.description}}</p>
+      </div>
     </div>
 
   </ion-content>

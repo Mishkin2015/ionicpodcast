@@ -1,0 +1,32 @@
+<ion-modal-view>
+    <ion-header-bar ng-click="closeModal()">
+    	<i class="icon ion-close close-x"></i>
+      <!-- <h1 class="title">{{podcast.title}}</h1> -->
+      <button class="logo-button-header float-right">
+        <img src='img/podradio-logo.png' class='header-logo'>
+      </button>
+    </ion-header-bar>
+    <ion-content>
+      	<!-- <div class="row">
+          <div class="col">
+            {{podcast.description}}
+          </div>
+        </div> -->
+
+      <div class="list card orange-card">
+        <div class="item">
+          <h2 class="bold-orange">
+            <span class="white-space-normal">{{podcast.title}} </span>
+          </h2>
+          <p class="white-text">{{podcast.school}}</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col grey-text">
+          <p>{{podcast.description}}</p>
+        </div>
+      </div>
+
+    </ion-content>
+</ion-modal-view>

@@ -1,12 +1,19 @@
-<ion-view>
+<ion-view view-title="Province">
+	
+	<ion-nav-buttons side="right">
+	    <button class="logo-button">
+	      <img src='img/podradio-logo.png' class='header-logo'>
+	    </button>
+	</ion-nav-buttons>
+
 	<ion-content>
 		<ion-list ng-if="regions">
-		  <ion-item ng-repeat="region in regions" class="button button-full" ng-click="school(region.id)">
+		  <ion-item ng-repeat="region in regions" class="button button-full button-clear bold-dark region-button-item" ng-click="school(region.id, region.name)">
 		    {{region.name}}
 		  </ion-item>
 		</ion-list>
 		<div ng-if="!regions">
-		  Loading regions...
+		  Loading provinces...
 		</div>
 	</ion-content>
 </ion-view>

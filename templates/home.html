@@ -1,11 +1,26 @@
 
-    <ion-view>
-		<ion-content title="Home">
-			Home
-			<div class="row">
-				<div class="col" ng-click="browse()">
-					Browse
+    <ion-view view-title="Podradio.co.za">
+		<ion-nav-buttons side="right">
+	      <!-- <button class="logo-button">
+	        <img src='img/podradio-logo.png' class='header-logo'>
+	      </button> -->
+	    </ion-nav-buttons>
+
+		<ion-content scroll="false">
+			<section class="home-container">
+				<div class="row center home-button button-border-bottom">
+					<div class="col col-center col-center-android" ng-click="browse()">
+						<i class="icon ion-search"></i><br>Browse
+					</div>
 				</div>
-			</div>
+				<div id="podradio-logo">
+					<!-- Podradio -->
+				</div>
+				<div class="row row-bottom center home-button">
+					<div class="col col-center col-center-android" ng-click="savedPodcasts()">
+				        <i class="icon ion-bookmark"></i><br>My Podcasts
+			      	</div>
+				</div>
+			</section>
 		</ion-content>
 	</ion-view>
